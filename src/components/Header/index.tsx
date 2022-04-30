@@ -9,16 +9,15 @@ import InputBase from "@mui/material/InputBase";
 import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
-// import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
-import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import HomeIcon from "@mui/icons-material/Home";
 import ViewTimelineIcon from "@mui/icons-material/ViewTimeline";
 import { Avatar } from "@mui/material";
-// import dp from "../../../public/assets/person/dp.jpeg"
+import PersonIcon from "@mui/icons-material/Person";
+
 const Search = styled(Box)(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -138,12 +137,14 @@ export default function PrimarySearchAppBar() {
       <MenuItem>
         <IconButton
           size="large"
-          aria-label="account of current user"
+          aria-label="show friend requiest"
           color="inherit"
         >
-          <AccountCircle />
+          <Badge badgeContent={4} color="error">
+            <PersonIcon />
+          </Badge>
         </IconButton>
-        <Typography variant="h3">Profile</Typography>
+        <Typography variant="h3">Add Friend</Typography>
       </MenuItem>
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
@@ -209,13 +210,12 @@ export default function PrimarySearchAppBar() {
           <Box gap={1} ml={2} sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
               size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
+              aria-label="show friend requiest"
               color="inherit"
             >
-              <AccountCircle />
+              <Badge badgeContent={4} color="error">
+                <PersonIcon />
+              </Badge>
             </IconButton>
             <IconButton
               size="large"
@@ -248,7 +248,7 @@ export default function PrimarySearchAppBar() {
               <MoreIcon />
             </IconButton>
           </Box>
-          <Box ml={1}>
+          <Box ml={3}>
             <IconButton
               size="large"
               aria-label="show more"
